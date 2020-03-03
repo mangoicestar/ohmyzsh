@@ -506,7 +506,8 @@ prompt_nvm() {
     nvm_prompt=$(nvm current 2>/dev/null)
     [[ "${nvm_prompt}x" == "x" ]] && return
   else
-    nvm_prompt="$(node --version)"
+    #nvm_prompt="$(node --version)"
+    [[ "${nvm_prompt}x" == "x" ]] && return
   fi
   nvm_prompt=${nvm_prompt}
 #  prompt_segment $BULLETTRAIN_NVM_BG $BULLETTRAIN_NVM_FG $BULLETTRAIN_NVM_PREFIX$nvm_prompt
@@ -583,7 +584,8 @@ NEWLINE='
 '
 #ida="%{$fg_bold[yellow]%}["$(whoami)"@EC2] "
 #ida="%{$fg_bold[yellow]%}["$(whoami)"@"$(hostname)"] "
-ida="%{$fg_bold[yellow]%}[idaaa@EC2] "
+#ida="%{$fg_bold[yellow]%}[idaaa@EC2] "
+ida="%{$fg_bold[yellow]%}[IDA@NewsCloud-Docker] "
 PROMPT=''
 [[ $BULLETTRAIN_PROMPT_ADD_NEWLINE == true ]] && PROMPT="$PROMPT$NEWLINE"
 #PROMPT="$PROMPT"'%{%f%b%k%}$(build_prompt)'
