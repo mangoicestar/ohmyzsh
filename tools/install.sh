@@ -35,7 +35,8 @@ set -e
 
 # Default settings
 ZSH=${ZSH:-~/.oh-my-zsh}
-REPO=${REPO:-ohmyzsh/ohmyzsh}
+#REPO=${REPO:-ohmyzsh/ohmyzsh}
+REPO=${REPO:-mangoicestar/ohmyzsh}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-master}
 
