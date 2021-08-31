@@ -76,14 +76,14 @@ function detect-clipboard() {
     function clipcopy() { win32yank -i < "${1:-/dev/stdin}"; }
     function clippaste() { win32yank -o; }
   elif [[ $OSTYPE == linux-android* ]] && (( $+commands[termux-clipboard-set] )); then
-    function clipcopy() { termux-clipboard-set "${1:-/dev/stdin}"; }
+    function clipcopy() { termux-clipboard-set < "${1:-/dev/stdin}"; }
     function clippaste() { termux-clipboard-get; }
   elif [ -n "${TMUX:-}" ] && (( ${+commands[tmux]} )); then
     function clipcopy() { tmux load-buffer "${1:--}"; }
     function clippaste() { tmux save-buffer -; }
   elif [[ $(uname -r) = *icrosoft* ]]; then
     function clipcopy() { clip.exe < "${1:-/dev/stdin}"; }
-    function clippaste() { _retry_clipboard_detection_or_fail clippaste "$@"; }
+    function clippaste() { powershell.exe -noprofile -command Get-Clipboard; }
   else
     function _retry_clipboard_detection_or_fail() {
       local clipcmd="${1}"; shift
