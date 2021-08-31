@@ -7,6 +7,7 @@ if [[ -z $ZSH_THEME_CLOUD_PREFIX ]]; then
 	now="%{$fg[black]%}%{$bg[white]%}\` date +%T\` 🦉 ❤️  🦖"
 	Fly="%{$fg_bold[yellow]%} ✈ "
 	RST="%{$reset_color%}"
+
 	newLine="
 "
 fi
